@@ -20,10 +20,9 @@ except:
 #read slope and intercept to predict values
 f = open("values.txt", "r")
 value_list = f.read().split("\n")
+print("Line Intercept is " + value_list[0] + " and Line Slope is " + value_list[1])
+#print price using line equation y = mx + c
+print("Price is: " + str(mileage * float(value_list[1]) + float(value_list[0])))
 if(float(value_list[0]) == 0 and float(value_list[1]) == 0):
-    print("Model not trained, price will be zero")
-else:
-    print("Line Intercept is " + value_list[0] + " and Line Slope is " + value_list[1])
-    #print price using line equation y = mx + c
-    print("Price is: " + str(mileage * float(value_list[1]) + float(value_list[0])))
-f.close()
+    print("Model not trained, hence price is zero")
+    f.close()
