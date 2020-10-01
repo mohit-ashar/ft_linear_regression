@@ -6,7 +6,7 @@
 #    By: mashar <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/25 06:06:01 by mashar            #+#    #+#              #
-#    Updated: 2020/09/29 23:06:42 by mashar           ###   ########.fr        #
+#    Updated: 2020/10/01 18:57:00 by vparekh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 import csv
@@ -41,7 +41,7 @@ for i in range(100000):
     theta_1 -= temp_theta_1
 
 #denormalize to get unscaled result
-theta_0 = theta_0 * (max_price - min_price) + min_price + (theta_1 * min_km * (max_price - min_price)) / (max_km - min_km)
+theta_0 = theta_0 * (max_price - min_price) + min_price - (theta_1 * min_km * (max_price - min_price)) / (max_km - min_km)
 theta_1 = theta_1 * (max_price - min_price) / (max_km - min_km)
 f = open("values.txt", "w")
 f.write(str(theta_0) + "\n" + str(theta_1))
